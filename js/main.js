@@ -21,6 +21,7 @@ const app = new Vue({
     },
     methods: {
         newReminder: function() {
+            this.removeDelete();
             if (this.addReminder == false) {
                 this.addReminder = true;
                 this.reminders.push({
@@ -33,12 +34,14 @@ const app = new Vue({
             }
         },
         focusInput: function() {
+            this.removeDelete();
             if (this.reminders.length > 0) {
                 let reminders = document.querySelectorAll(".reminder");
                 reminders[this.reminders.length - 1].focus();
             }
         },
         loseFocus: function(i) {
+            this.removeDelete();
             let reminders = document.querySelectorAll(".reminder");
             reminders[i].blur();
             this.checkInput();
@@ -51,13 +54,32 @@ const app = new Vue({
                 }
             }
         },
+        textAreaAdjust: function(i) {
+            let reminders = document.querySelectorAll(".reminder");
+            reminders[i].style.height = "auto";
+            reminders[i].style.height = reminders[i].scrollHeight + "px";
+        },
         removeReminder: function(i) {
+            let reminders = document.querySelectorAll(".reminder");
+            reminders[i].style.height = "auto";
             this.reminders.splice(i, 1);
         },
         done: function(i) {
-            if (this.todos[i].isDone == false) {
-                this.todos[i].isDone = true;
-            } else this.todos[i].isDone = false;
+            this.removeDelete();
+            this.loseFocus(i);
+            if (this.reminders[i].isDone == false) {
+                this.reminders[i].isDone = true;
+            } else this.reminders[i].isDone = false;
+        },
+        showDelete: function() {
+            let deleteBtns = document.querySelectorAll(".delete-icon");
+            if (deleteBtns[0].classList.contains("delete")) {
+                this.removeDelete();
+            } else deleteBtns.forEach(item => item.classList.add("delete"));
+        },
+        removeDelete: function() {
+            let deleteBtns = document.querySelectorAll(".delete-icon");
+            deleteBtns.forEach(item => item.classList.remove("delete"));
         },
         setClock: function() {
             const time = () => {

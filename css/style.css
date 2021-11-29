@@ -165,22 +165,64 @@ footer {
     flex: 0;
 }
 /* header */
-
+header h2 {
+    font-size: 10pt;
+    font-weight: 100;
+}
 /* main */
 h1 {
     font-size: 14pt;
 }
-h2 {
+main h2 {
     font-size: 10pt;
     font-weight: 100;
     color: rgb(203,203,205);
 }
-.reminders input {
+.reminders textarea {
     outline: none;
     border: none;
     cursor: default;
     caret-color: var(--primary);
-    z-index: 2;
+    resize: none;
+    overflow: hidden;
+    font-weight: 100;
+    font-size: 8pt;
+    width: 90%;
+}
+.reminders li .right {
+    border-bottom: .2mm solid #0001;
+    flex: 1;
+}
+.reminders li .right .icon {
+    align-self: start;
+    min-width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgb(250,66,56);
+    visibility: hidden;
+}
+.reminders li .right .icon.delete {
+    visibility: visible;
+}
+.reminders li .right .icon i {
+    font-size: .7rem;
+}
+.reminders li .left .check {
+    width: .9rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: .3mm solid #0003;
+}
+.reminders li .left .checked {
+    width: .6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.reminders li .left .check.done {
+    border: .3mm solid var(--primary);
+}
+.reminders li .left .check.done .checked {
+    background: var(--primary);
 }
 .space-to-click {
     flex: 1;
