@@ -2,7 +2,7 @@
     user-select: none;
     -webkit-user-select: none;
 }
-.container {
+/* .container {
     max-width: 800px;
     border-radius: 1rem;
 }
@@ -34,4 +34,25 @@
     background: rgb(30,225,100);
     cursor: pointer;
     font-weight: 100;
+} */
+
+#smartphone {
+    height: 146.71mm;
+    width: 71.52mm;
+    background: rgb(44,44,44);
+    border-radius: 11.5mm;
+    border: 1px solid rgb(137,137,137);
+    box-shadow: 0 0 3rem #0007;
+}
+.glass {
+    height: 144.61mm;
+    width: 69.42mm;
+    border-radius: 10.7mm;
+    background: #000;
+}
+.screen {
+    height: 139.77mm;
+    width: 64.58mm;
+    background: #fff;
+    border-radius: 8.4mm;
 }

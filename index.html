@@ -12,14 +12,14 @@
 <body>
     <div id="root">
         <!-- header -->
-        <header class="text-center">
+        <!-- <header class="text-center">
             <div class="container mx-auto">
                 <img class="w-20 py-1" src="img/logo.png" alt="logo boolean">
                 <h1>Todo List</h1>
             </div>
-        </header>
+        </header> -->
         <!-- main -->
-        <main>
+        <!-- <main>
             <div class="add-todo text-center my-1">
                 <input v-model="inputValue" @keydown.enter="addTodo()" type="text" placeholder="Inserisci una nuova cosa da fare">
                 <button class="text-white" @click="addTodo()">Aggiungi</button>
@@ -35,8 +35,16 @@
                 </ul>
                 <h2 class="p-1" v-else>Non ci sono todos</h2>
             </div>
-        </main>
+        </main> -->
 
+        <!-- smartphone ui -->
+        <div id="smartphone" class="mx-auto my-3 flex-center">
+            <div class="glass flex-center">
+                <div class="screen">
+
+                </div>
+            </div>
+        </div>
     </div>
     <!-- development version, includes helpful console warnings -->
     <script src="js/vue.js"></script>
