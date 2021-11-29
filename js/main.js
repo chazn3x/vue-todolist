@@ -4,29 +4,37 @@ const app = new Vue({
         reminders: [
             {
                 text: "Fare la spesa",
-                isDone: false
+                isDone: false,
+                height: "auto"
             },
             {
                 text: "Portare fuori il cane",
-                isDone: false
+                isDone: false,
+                height: "auto"
             },
             {
                 text: "Cucinare il pranzo",
-                isDone: false
+                isDone: false,
+                height: "auto"
             }
         ],
         inputValue: "",
         clock: "",
-        addReminder: false
+        addReminder: false,
+        enterKey: false,
+        shiftKey: false
     },
     methods: {
         newReminder: function() {
+            this.enterKey = false;
+            this.shiftKey = false;
             this.removeDelete();
             if (this.addReminder == false) {
                 this.addReminder = true;
                 this.reminders.push({
                     text: this.inputValue,
-                    isDone: false
+                    isDone: false,
+                    height: "auto"
                 });
                 this.inputValue = "";
             } else {
@@ -54,10 +62,28 @@ const app = new Vue({
                 }
             }
         },
-        textAreaAdjust: function(i) {
-            let reminders = document.querySelectorAll(".reminder");
-            reminders[i].style.height = "auto";
-            reminders[i].style.height = reminders[i].scrollHeight + "px";
+        textAreaAdjust: function(i, event) {
+            console.log(event.key);
+            if (event.key == "Enter") {
+                this.enterKey = true;
+            }
+            if (event.key == "Shift") {
+                this.shiftKey = true;
+            }
+            if (this.enterKey && !(this.shiftKey)) {
+                event.preventDefault();
+                if (this.reminders[this.reminders.length - 1].text != "") {
+                    this.addReminder = false;
+                    this.newReminder();
+                } else {
+                    this.reminders.splice(this.reminders.length - 1, 1);
+                    this.loseFocus(i);
+                }
+            } else {
+                const reminders = document.querySelectorAll(".reminder");
+                this.reminders[i].height = "auto";
+                this.reminders[i].height = reminders[i].scrollHeight + "px";
+            }
         },
         removeReminder: function(i) {
             let reminders = document.querySelectorAll(".reminder");
