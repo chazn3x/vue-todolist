@@ -54,11 +54,17 @@
             <div class="glass flex-center">
                 <div class="screen relative">
                     <div class="notch-container absolute positionx-center top-0 flex-center-x">
-                        <div class="notch-side left absolute left-0"></div>
-                        <div class="notch"></div>
-                        <div class="notch-side right absolute right-0"></div>
+                        <div class="notch-side left absolute left-0 h-100"></div>
+                        <div class="notch h-100"></div>
+                        <div class="notch-side right absolute right-0 h-100"></div>
                     </div>
-
+                    <!-- os/app ui -->
+                    <div class="status-bar w-100 flex-end-y">
+                        <div class="status left">
+                            <div class="clock">{{clock}}</div>
+                        </div>
+                        <div class="status right"></div>
+                    </div>
                 </div>
             </div>
         </div>
