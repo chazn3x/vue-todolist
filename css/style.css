@@ -14,8 +14,7 @@
     background: rgb(44,44,44);
     border-radius: 11.5mm;
     border: 0.2mm solid rgb(136,136,136);
-    outline: 0.2mm solid black;
-    box-shadow: 0 0 3rem #000c;
+    box-shadow: 0 0 3rem #000c, 0 0 0.1mm 0.1mm black;
 }
 .glass {
     height: 144.61mm;
@@ -48,12 +47,12 @@
 .btns .right {
     right: 0;
     transform: translateX(calc(100% + 0.5px));
-    width: 0.3mm;
+    width: 0.4mm;
 }
 .btns>div {
     background: rgb(44,44,44);
     border-radius: 0.2mm;
-    outline: 0.3mm solid rgb(150,150,150);
+    box-shadow: 0 0 0.2mm 0.2mm rgb(150,150,150);
     z-index: -2;
 }
 .btns .switch {
@@ -175,15 +174,18 @@ main h2 {
     font-size: .7rem;
 }
 .reminders li .left .check {
-    width: .9rem;
-    aspect-ratio: 1;
+    width: 15px;
+    max-width: 15px;
+    height: 15px;
+    max-height: 15px;
     border-radius: 50%;
     border: .3mm solid #0003;
 }
 .reminders li .left .checked {
-    width: .6rem;
-    aspect-ratio: 1;
+    width: calc(15px - 2px);
+    height: calc(15px - 2px);
     border-radius: 50%;
+    border: 1.5px solid white;
 }
 .reminders li .left .check.done {
     border: .3mm solid var(--primary);

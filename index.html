@@ -72,7 +72,7 @@
                                 <ul class="reminders flex-column" @click="checkInput()">
                                     <li class="flex" v-for="(item, i) in reminders">
                                         <div class="left pt-05">
-                                            <div class="check me-05 flex-center" :class="(item.isDone == true ? 'done' : '')" @click="done(i)">
+                                            <div class="check me-05" :class="(item.isDone == true ? 'done' : '')" @click="done(i)">
                                                 <div class="checked"></div>
                                             </div>
                                         </div>
