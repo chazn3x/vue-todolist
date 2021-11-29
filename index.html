@@ -26,8 +26,8 @@
             </div>
             <div class="container bg-lightgrey p-1 mx-auto my-1">
                 <ul class="todos" v-if="todos.length > 0">
-                    <li class="flex justify-between p-1" :class="(item.isDone == true ? 'done' : '')" v-for="(item, i) in todos" @click="done(i)">
-                        <span>{{item.text}}</span>
+                    <li class="flex justify-between p-1" :class="(item.isDone == true ? 'done' : '')" v-for="(item, i) in todos">
+                        <span @click="done(i)">{{item.text}}</span>
                         <div class="icon" @click="removeTodo(i)">
                             <i class="fas fa-times"></i>
                         </div>
