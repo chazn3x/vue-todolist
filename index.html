@@ -53,14 +53,14 @@
             </div>
             <div class="glass flex-center">
                 <div class="screen relative">
-                    <div class="notch-container absolute positionx-center top-0 flex-center-x">
+                    <div class="notch-container absolute positionx-center top-0 flex-center-x" @click="checkInput()">
                         <div class="notch-side left absolute left-0 h-100"></div>
                         <div class="notch h-100"></div>
                         <div class="notch-side right absolute right-0 h-100"></div>
                     </div>
                     <!-- os/app ui -->
                     <!-- status bar -->
-                    <div class="status-bar w-100 flex-end-y justify-between">
+                    <div class="status-bar w-100 flex-end-y justify-between" @click="checkInput()">
                         <div class="status left">
                             <div class="clock">{{clock}}</div>
                         </div>
@@ -81,31 +81,41 @@
                             </div>
                         </div>
                     </div>
-                    <div id="app" class="relative">
+                    <div id="app" class="relative flex justify-between">
                         <!-- header -->
-                        <header>
-                            <div class="py-1 px-05">
+                        <header class="py-1 px-05" @click="checkInput()">
+                            <div>
                             </div>
                         </header>
                         <!-- main -->
-                        <main class="px-1 pb-1">
-                            <h1 class="text-primary">Reminders</h1>
-                            <div class="mt-1" v-if="todos.length > 0">
-                                <div class="add-todo text-center my-1">
-                                    <input v-model="inputValue" @keydown.enter="addTodo()" type="text" placeholder="Inserisci una nuova cosa da fare">
-                                    <button class="text-white" @click="addTodo()">Aggiungi</button>
-                                </div>
-                                <ul class="todos">
-                                    <li class="flex justify-between p-1" :class="(item.isDone == true ? 'done' : '')" v-for="(item, i) in todos">
-                                        <span @click="done(i)">{{item.text}}</span>
-                                        <div class="icon" @click="removeTodo(i)">
+                        <main class="px-1 pb-1 relative">
+                            <h1 class="text-primary" @click="checkInput()">Reminders</h1>
+                            <div class="mt-1 flex-column h-100" v-if="reminders.length > 0">
+                                <ul class="reminders" @click="checkInput()">
+                                    <li class="flex justify-between p-1" v-for="(item, i) in reminders">
+                                        <input class="reminder" type="text" v-model="item.text" @keydown.enter="loseFocus(i)">
+                                        <div class="icon" @click="removeReminder(i)">
                                             <i class="fas fa-times"></i>
                                         </div>
                                     </li>
                                 </ul>
+                                <div class="space-to-click" @click="newReminder()">
+
+                                </div>
                             </div>
-                            <h2 class="absolute position-center text-center" v-else>No reminders</h2>
+                            <div class="empty h-100" v-else @click="newReminder()">
+                                <h2 class="absolute position-center text-center">No Reminders</h2>
+                            </div>
                         </main>
+                        <!-- footer -->
+                        <footer class="px-1 pb-1" @click="newReminder()" @click="checkInput()">
+                            <div class="addReminder flex-center-y">
+                                <div class="icon bg-primary flex-center">
+                                    <i class="fas fa-plus text-white"></i>
+                                </div>
+                                <h3 class="text-primary ms-05">New Reminder</h3>
+                            </div>
+                        </footer>
                     </div>
                 </div>
             </div>

@@ -153,8 +153,20 @@
 #app {
     height: 100%;
     max-height: calc(139.77mm - 5.58mm);
+    flex-direction: column;
+}
+header {
+    flex: 0;
+}
+main {
+    flex: 1;
+}
+footer {
+    flex: 0;
 }
 /* header */
+
+/* main */
 h1 {
     font-size: 14pt;
 }
@@ -162,4 +174,28 @@ h2 {
     font-size: 10pt;
     font-weight: 100;
     color: rgb(203,203,205);
+}
+.reminders input {
+    outline: none;
+    border: none;
+    cursor: default;
+    caret-color: var(--primary);
+    z-index: 2;
+}
+.space-to-click {
+    flex: 1;
+}
+
+/* footer */
+footer .icon {
+    min-width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+footer .icon i {
+    font-size: .7rem;
+}
+footer h3 {
+    font-size: 8pt;
+    font-weight: 100;
 }

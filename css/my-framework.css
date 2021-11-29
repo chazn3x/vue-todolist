@@ -109,6 +109,7 @@ img {width: 100%;}
 .justify-between {justify-content: space-between;}
 .justify-around {justify-content: space-around;}
 .justify-center {justify-content: center;}
+.flex-column {display: flex; flex-direction: column;}
 /* position */
 .absolute {position: absolute;}
 .fixed {position: fixed;}

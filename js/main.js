@@ -1,41 +1,63 @@
 const app = new Vue({
     el: "#root",
     data: {
-        todos: [
-            // {
-            //     text: "Fare la spesa",
-            //     isDone: false
-            // },
-            // {
-            //     text: "Portare fuori il cane",
-            //     isDone: false
-            // },
-            // {
-            //     text: "Cucinare il pranzo",
-            //     isDone: false
-            // }
+        reminders: [
+            {
+                text: "Fare la spesa",
+                isDone: false
+            },
+            {
+                text: "Portare fuori il cane",
+                isDone: false
+            },
+            {
+                text: "Cucinare il pranzo",
+                isDone: false
+            }
         ],
         inputValue: "",
-        clock: ""
+        clock: "",
+        addReminder: false
     },
     methods: {
-        addTodo: function() {
-            if (this.inputValue != "") {
-                this.todos.unshift({
+        newReminder: function() {
+            if (this.addReminder == false) {
+                this.addReminder = true;
+                this.reminders.push({
                     text: this.inputValue,
                     isDone: false
                 });
                 this.inputValue = "";
+            } else {
+                this.checkInput();
             }
         },
-        removeTodo: function(i) {
-            this.todos.splice(i, 1);
+        focusInput: function() {
+            if (this.reminders.length > 0) {
+                let reminders = document.querySelectorAll(".reminder");
+                reminders[this.reminders.length - 1].focus();
+            }
+        },
+        loseFocus: function(i) {
+            let reminders = document.querySelectorAll(".reminder");
+            reminders[i].blur();
+            this.checkInput();
+        },
+        checkInput: function() {
+            if (this.reminders.length > 0) {
+                this.addReminder = false;
+                if (this.reminders[this.reminders.length - 1].text == "") {
+                    this.reminders.splice(this.reminders.length - 1, 1);
+                }
+            }
+        },
+        removeReminder: function(i) {
+            this.reminders.splice(i, 1);
         },
         done: function(i) {
             if (this.todos[i].isDone == false) {
                 this.todos[i].isDone = true;
             } else this.todos[i].isDone = false;
-            
         },
         setClock: function() {
             const time = () => {
@@ -65,5 +87,10 @@ const app = new Vue({
     },
     created() {
         this.setClock();
+    },
+    updated() {
+        if (this.addReminder == true) {
+            this.focusInput();
+        }
     }
 });
