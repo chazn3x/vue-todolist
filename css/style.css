@@ -1,0 +1,33 @@
+.container {
+    max-width: 800px;
+    border-radius: 1rem;
+}
+.todos li:not(:last-child) {
+    border-bottom: .5px solid #0002;
+}
+.todos li span {
+    cursor: pointer;
+}
+.todos li.done span {
+    text-decoration: line-through;
+}
+.todos .icon {
+    cursor: pointer;
+}
+.add-todo input {
+    border: none;
+    border: .5px solid grey;
+    padding: .3rem;
+    width: 250px;
+    border-radius: .2rem;
+}
+.add-todo input:focus {
+    outline: 1px solid black;
+}
+.add-todo button {
+    padding: .3rem .6rem;
+    border-radius: .2rem;
+    background: rgb(30,225,100);
+    cursor: pointer;
+    font-weight: 100;
+}
