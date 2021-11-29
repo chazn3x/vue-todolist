@@ -159,6 +159,7 @@ img {width: 100%;}
 .left-90 {left: 90%}
 .left-100 {left: 100%}
 .position-center {top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.positionx-center {left: 50%; transform: translateX(-50%);}
 /* dimensions */
 .w-0 {width: 0;}
 .w-10 {width: 10%}
@@ -211,3 +212,6 @@ img {width: 100%;}
 .bg-grey {background-color: grey;}
 .bg-lightgrey {background-color: lightgrey;}
 .bg-img {background-position: center; background-repeat: no-repeat; background-size: cover;}
+/* transform */
+.rotatex-90 {transform: rotateX(90deg); -webkit-transform: rotateX(90deg);}
+.rotatey-90 {transform: rotateY(90deg); -webkit-transform: rotateY(90deg);}

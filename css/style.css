@@ -36,23 +36,95 @@
     font-weight: 100;
 } */
 
+/* mockup */
 #smartphone {
     height: 146.71mm;
     width: 71.52mm;
     background: rgb(44,44,44);
     border-radius: 11.5mm;
-    border: 1px solid rgb(137,137,137);
-    box-shadow: 0 0 3rem #0007;
+    border: 0.2mm solid rgb(136,136,136);
+    outline: 0.2mm solid black;
+    box-shadow: 0 0 3rem #000c;
 }
 .glass {
     height: 144.61mm;
     width: 69.42mm;
     border-radius: 10.7mm;
     background: #000;
+    z-index: 1;
 }
 .screen {
     height: 139.77mm;
     width: 64.58mm;
     background: #fff;
-    border-radius: 8.4mm;
+    border-radius: 8.1mm;
+}
+.antennas>div {
+    background: rgb(30,30,30);
+}
+.antennas .antenna-x {
+    height: 4px;
+}
+.antennas .antenna-y {
+    width: 5px;
+}
+.btns .left {
+    left: 0;
+    transform: translateX(calc((100% + 0.5px) * -1));
+    width: 0.7mm;
+}
+.btns .right {
+    right: 0;
+    transform: translateX(calc(100% + 0.5px));
+    width: 0.3mm;
+}
+.btns>div {
+    background: rgb(44,44,44);
+    border-radius: 0.2mm;
+    outline: 0.3mm solid rgb(150,150,150);
+    z-index: -2;
+}
+.btns .switch {
+    height: 5mm;
+}
+.btns .volume {
+    height: 11.6mm;
+}
+.btns .volume.up {
+    top: 40mm;
+}
+.btns .volume.down {
+    top: 54mm;
+}
+.btns .power {
+    height: 18.1mm;
+    top: 43mm;
+}
+.notch-container {
+    height: 5.58mm;
+    width: 28.69mm;
+    background-image: linear-gradient(
+        #000 0.95mm,
+        #fff 0.95mm
+    );
+    z-index: 2;
+}
+.notch-side {
+    height: 100%;
+    width: 2mm;
+    background: #fff;
+}
+.notch-side.left {
+    border-radius: 0 0.95mm 0 0;
+    transform: translateX(-50%);
+}
+.notch-side.right {
+    border-radius: 0.95mm 0 0 0;
+    transform: translateX(50%);
+}
+.notch {
+    height: 100%;
+    width: 26.79mm;
+    background: #000;
+    border-radius: 0 0 3.8mm 3.8mm;
 }
