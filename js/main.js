@@ -41,7 +41,7 @@ const app = new Vue({
             const time = () => {
                 const data = new Date();
                 let hour = data.getHours();
-                const minutes = data.getMinutes();
+                let minutes = data.getMinutes();
                 switch (hour) {
                     case 13: hour = 1; break;
                     case 14: hour = 2; break;
@@ -54,7 +54,9 @@ const app = new Vue({
                     case 21: hour = 9; break;
                     case 22: hour = 10; break;
                     case 23: hour = 11; break;
-
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
                 }
                 this.clock = hour + ":" + minutes;
             }

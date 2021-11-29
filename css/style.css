@@ -130,8 +130,16 @@
 /* os/app ui */
 .status-bar {
     height: 5.58mm;
-    font-size: 8pt;
+    font-size: 7.5pt;
 }
 .status.left {
     padding-left: 1.5rem;
+}
+.status.right .icons .mobile-network i {
+    font-size: .15rem;
+    margin-left: -0.6mm;
+    color: lightgrey;
+}
+.status.right .icons>div {
+    margin-left: .25rem;
 }
