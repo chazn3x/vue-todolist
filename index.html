@@ -77,7 +77,7 @@
                                             </div>
                                         </div>
                                         <div class="right flex">
-                                            <textarea class="reminder py-05" rows="1" v-model="item.text" @keydown.enter="loseFocus(i)" @keydown="textAreaAdjust(i)"></textarea>
+                                            <textarea class="reminder py-05" rows="1" spellcheck="false" v-model="item.text" @keydown.enter="loseFocus(i)" @keydown="textAreaAdjust(i)" @click="removeDelete()"></textarea>
                                             <div class="icon mx-1 mt-05 flex-center delete-icon" @click="removeReminder(i)">
                                                 <i class="fas fa-minus text-white"></i>
                                             </div>
