@@ -2,18 +2,18 @@ const app = new Vue({
     el: "#root",
     data: {
         todos: [
-            {
-                text: "Fare la spesa",
-                isDone: false
-            },
-            {
-                text: "Portare fuori il cane",
-                isDone: false
-            },
-            {
-                text: "Cucinare il pranzo",
-                isDone: false
-            }
+            // {
+            //     text: "Fare la spesa",
+            //     isDone: false
+            // },
+            // {
+            //     text: "Portare fuori il cane",
+            //     isDone: false
+            // },
+            // {
+            //     text: "Cucinare il pranzo",
+            //     isDone: false
+            // }
         ],
         inputValue: "",
         clock: ""

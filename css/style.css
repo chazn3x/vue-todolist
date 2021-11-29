@@ -36,6 +36,10 @@
     font-weight: 100;
 } */
 
+:root {
+    --primary: rgb(55,123,255);
+}
+
 /* mockup */
 #smartphone {
     height: 146.71mm;
@@ -58,6 +62,7 @@
     width: 64.58mm;
     background: #fff;
     border-radius: 8.1mm;
+    flex-direction: column;
 }
 .antennas>div {
     background: rgb(30,30,30);
@@ -142,4 +147,19 @@
 }
 .status.right .icons>div {
     margin-left: .25rem;
+}
+
+/* app */
+#app {
+    height: 100%;
+    max-height: calc(139.77mm - 5.58mm);
+}
+/* header */
+h1 {
+    font-size: 14pt;
+}
+h2 {
+    font-size: 10pt;
+    font-weight: 100;
+    color: rgb(203,203,205);
 }
