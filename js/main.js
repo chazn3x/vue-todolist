@@ -63,7 +63,6 @@ const app = new Vue({
             }
         },
         textAreaAdjust: function(i, event) {
-            console.log(event.key);
             if (event.key == "Enter") {
                 this.enterKey = true;
             }
@@ -72,8 +71,8 @@ const app = new Vue({
             }
             if (this.enterKey && !(this.shiftKey)) {
                 event.preventDefault();
+                this.addReminder = false;
                 if (this.reminders[this.reminders.length - 1].text != "") {
-                    this.addReminder = false;
                     this.newReminder();
                 } else {
                     this.reminders.splice(this.reminders.length - 1, 1);
