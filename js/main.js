@@ -70,6 +70,7 @@ const app = new Vue({
                 this.shiftKey = true;
             }
             if (this.enterKey && !(this.shiftKey)) {
+                this.enterKey = false;
                 event.preventDefault();
                 this.addReminder = false;
                 if (this.reminders[this.reminders.length - 1].text != "") {
@@ -79,7 +80,7 @@ const app = new Vue({
                     this.loseFocus(i);
                 }
             } else {
-                const reminders = document.querySelectorAll(".reminder");
+                let reminders = document.querySelectorAll(".reminder");
                 this.reminders[i].height = "auto";
                 this.reminders[i].height = reminders[i].scrollHeight + "px";
             }
